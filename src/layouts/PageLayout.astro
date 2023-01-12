@@ -1,0 +1,35 @@
+---
+import Layout from './BaseLayout.astro';
+import { nav } from '../config/navigation.js';
+import Header from '../components/common/Header.astro';
+import Button from '../components/common/Button.astro';
+import Footer from '../components/common/Footer.astro';
+import { footerLists, footerSocials } from '../config/footer';
+import settings from '../config/settings';
+
+const { title } = Astro.props;
+---
+
+<Layout {title}>
+  <Header rightMenu navData={nav} slot="header">
+		<span slot="logo">
+		<!--  <Logo /> -->
+		</span>
+
+		<Button slot="action-item" href="/theme/get-started">Get Started</Button>
+	</Header>
+  <div id="page">
+		<slot />
+	</div>
+	<Footer
+		slot="footer"
+		background="var(--theme-surface-1)"
+		color="var(--theme-on-surface-1)"
+		{footerLists}
+		{footerSocials}
+		copyrightName={settings.name}
+		showLittleSticksPlug={settings.showLittleSticksPlug}
+	>
+		<!-- <Logo slot="logo" /> -->
+	</Footer>
+</Layout>
