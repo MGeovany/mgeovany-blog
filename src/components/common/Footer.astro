@@ -1,0 +1,53 @@
+---
+import { Icon } from 'astro-icon';
+import Container from './Container.astro';
+
+const { footerSocials, footerLists, copyrightName, showLittleSticksPlug = true } =
+  Astro.props;
+---
+<footer>
+  <Container>
+    <div class="footer-grid__container">
+      <div class="footer-brand__container">
+        <div>
+          <slot name="logo" />
+        </div>
+        <ul class="footer-socials__list">
+          {
+            footerSocials.map((social:any) => (
+              <li class="footer-socials__item">
+                <a
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="footer-socials__link"
+                  title={`Open ${social.name} profile`}
+                >
+                  <Icon name={social.icon} width="24px" height="24px" />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      {
+        footerLists.map((list:any) => (
+          <div>
+            <p><strong>{list.title}</strong></p>
+            <ul class="footer-link__list">
+              {list.items.map((item:any) => (
+                <li>
+                  <a href={item.slug}>{item.title}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+    <div class="footer-copyright__container">
+      <p>Copyright &copy; {new Date().getFullYear()} {copyrightName}</p>
+    </div>
+
+  </Container>
+</footer>
