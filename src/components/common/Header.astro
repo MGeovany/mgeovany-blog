@@ -6,7 +6,7 @@ const { navData, rightMenu } = Astro.props;
 <script type="module">
   const bodyElement = document.querySelector('body');
   const menuButton = document.querySelector('#menuButton')
-  const navHeader = document.querySelector('#odysseyNavHeader');
+  const navHeader = document.querySelector('#navHeader');
   const menuButtonIconHam = document.querySelector('#menuButtonIconHam');
   const menuButtonIconClose = document.querySelector('#menuButtonIconClose');
   let scrollPosition = 0;
@@ -39,7 +39,7 @@ const { navData, rightMenu } = Astro.props;
   }
 </script>  
 
-<header id="odysseyNavHeader" class={`${rightMenu ? "header--right" : ``.trim()} px-16`}>
+<header id="navHeader" class={`${rightMenu ? "header--right" : ``.trim()} px-16`}>
   <div class="header-logo-menu__container">
   <button id="menuButton" title="Open Main Menu">
     <span id="menuButtonIconHam">

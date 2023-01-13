@@ -2,37 +2,32 @@
 import Layout from '../layouts/PageLayout.astro';
 import Container from '../components/common/Container.astro';
 import HomeHero from '../components/heros/HomeHero.astro';
+import Card from '../components/Card.astro';
+
+const coverImages = 
+	{
+		desk: 'https://images.pexels.com/photos/4057059/pexels-photo-4057059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+		computing: 'https://images.pexels.com/photos/13399388/pexels-photo-13399388.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+		videography: 'https://images.pexels.com/photos/2823936/pexels-photo-2823936.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+		gadgets: 'https://images.pexels.com/photos/3178938/pexels-photo-3178938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+		entertainment: 'https://images.pexels.com/photos/4842562/pexels-photo-4842562.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+	}
+
+
 ---
 
-<Layout title="Welcome to Astro">
+<Layout title="mgeovanydev | Welcome Page">
 	<HomeHero />
 	<Container>
 		<section class="py-12 px-auto">
-			<h2>Landing Pages</h2>
-			<p>
-				Use one of our landing pages to jumpstart your website or ad campaign.
-			</p>
-			<div class="grid grid-cols-2 gap-4">
-				<p class="instructions">
-					To get started, open the directory <code>src/pages</code> in your project.<br
-					/>
-					<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-				</p>
-				<p class="instructions">
-					To get started, open the directory <code>src/pages</code> in your project.<br
-					/>
-					<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-				</p>
-				<p class="instructions">
-					To get started, open the directory <code>src/pages</code> in your project.<br
-					/>
-					<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-				</p>
-				<p class="instructions">
-					To get started, open the directory <code>src/pages</code> in your project.<br
-					/>
-					<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-				</p>
+			<h2>Favorite Categories 🧡</h2>
+			<div class="grid grid-cols-2 gap-3">
+				<Card href="/categories/desk" title="Desk" imgSrc={coverImages.desk}/>
+				<Card href="/categories/computing" title="Computing" imgSrc={coverImages.computing}/>
+				<Card href="/categories/videography" title="Videography"imgSrc={coverImages.videography}/>
+				<Card href="/categories/gadgets" title="Gadgets" imgSrc={coverImages.gadgets}/>
+				<Card href="/categories/entertainment" title="Entertainment" imgSrc={coverImages.entertainment}/>
+				<Card href="/categories/entertainment" title="Another" imgSrc={coverImages.entertainment}/>
 			</div>
 		</section>
 	</Container>
