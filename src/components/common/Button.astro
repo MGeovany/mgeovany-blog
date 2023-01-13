@@ -10,4 +10,11 @@ const Tag = href ? 'a' : 'button';
 	{href}
 >
 	<slot />
+	{
+    customIcon && (
+      <span class="ml-1 flex align-middle w-6">
+        <slot name="icon">custom_icon</slot>
+      </span>
+    )
+  }
 </Tag>
