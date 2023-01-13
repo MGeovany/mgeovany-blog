@@ -13,7 +13,7 @@ const { title } = Astro.props;
 <Layout {title}>
 	<Header rightMenu navData={nav} slot="header">
 		<span slot="logo">
-			mgeovany
+			mgeovanydev
 		</span>
 		<Button slot="action-item" href="/blog">Get Started</Button>
 	</Header>
@@ -22,11 +22,12 @@ const { title } = Astro.props;
 	</div>
 	<Footer
 		slot="footer"
-		{footerLists}
-		{footerSocials}
+		footerLists={footerLists}
+    footerSocials={footerSocials}
 		copyrightName={settings.name}
-		showLittleSticksPlug={settings.showLittleSticksPlug}
 	>
-		<!-- <Logo slot="logo" /> -->
+	<span slot="logo">
+		mgeovanydev
+	</span>
 	</Footer>
 </Layout>

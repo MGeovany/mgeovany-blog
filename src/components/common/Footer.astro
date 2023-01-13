@@ -2,25 +2,24 @@
 import { Icon } from 'astro-icon';
 import Container from './Container.astro';
 
-const { footerSocials, footerLists, copyrightName, showLittleSticksPlug = true } =
-  Astro.props;
+const { footerSocials, footerLists, copyrightName } = Astro.props;
 ---
-<footer>
+<footer class="min-w-max bg-neutral-800 text-slate-300 rounded-t-3xl">
   <Container>
-    <div class="footer-grid__container">
-      <div class="footer-brand__container">
+    <div class="pt-5 px-0 pb-4 grid grid-cols-3">
+      <div>
         <div>
           <slot name="logo" />
         </div>
-        <ul class="footer-socials__list">
+        <ul class="my-4 mx-0 p-0 flex list-none">
           {
             footerSocials.map((social:any) => (
-              <li class="footer-socials__item">
+              <li class="mr-2">
                 <a
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="footer-socials__link"
+                  class=""
                   title={`Open ${social.name} profile`}
                 >
                   <Icon name={social.icon} width="24px" height="24px" />
@@ -34,10 +33,10 @@ const { footerSocials, footerLists, copyrightName, showLittleSticksPlug = true }
         footerLists.map((list:any) => (
           <div>
             <p><strong>{list.title}</strong></p>
-            <ul class="footer-link__list">
+            <ul class="m-0 p-0 list-none">
               {list.items.map((item:any) => (
-                <li>
-                  <a href={item.slug}>{item.title}</a>
+                <li class="mb-1">
+                  <a class="m-0 hover:opacity-80 text-sm"  href={item.slug}>{item.title}</a>
                 </li>
               ))}
             </ul>
@@ -45,8 +44,8 @@ const { footerSocials, footerLists, copyrightName, showLittleSticksPlug = true }
         ))
       }
     </div>
-    <div class="footer-copyright__container">
-      <p>Copyright &copy; {new Date().getFullYear()} {copyrightName}</p>
+    <div class="flex flex-col">
+      <p class="mr-0 text-sm">Copyright &copy; {new Date().getFullYear()} {copyrightName}</p>
     </div>
 
   </Container>
