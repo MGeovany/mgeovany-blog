@@ -11,14 +11,15 @@ const { title } = Astro.props;
 ---
 
 <Layout {title}>
-  <Header rightMenu navData={nav} slot="header">
+	<Header rightMenu navData={nav} slot="header">
 		<span slot="logo">
-		<!--  <Logo /> -->
+			<!--  <Logo /> -->
+			mgeovany
 		</span>
 
 		<Button slot="action-item" href="/theme/get-started">Get Started</Button>
 	</Header>
-  <div id="page">
+	<div id="page">
 		<slot />
 	</div>
 	<Footer
