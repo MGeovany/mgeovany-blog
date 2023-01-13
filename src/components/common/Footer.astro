@@ -1,13 +1,14 @@
 ---
-import { Icon } from 'astro-icon';
 import Container from './Container.astro';
+import { Icon } from 'astro-icon';
+
 
 const { footerSocials, footerLists, copyrightName } = Astro.props;
 ---
 <footer class="min-w-max bg-neutral-800 text-slate-300 rounded-t-3xl">
   <Container>
-    <div class="pt-5 px-0 pb-4 grid grid-cols-3">
-      <div>
+    <div class="pt-5 px-0 pb-4 grid grid-cols-4">
+      <div class="col-span-2">
         <div>
           <slot name="logo" />
         </div>
@@ -45,7 +46,7 @@ const { footerSocials, footerLists, copyrightName } = Astro.props;
       }
     </div>
     <div class="flex flex-col">
-      <p class="mr-0 text-sm">Copyright &copy; {new Date().getFullYear()} {copyrightName}</p>
+      <p class="mr-0 text-sm">Copyright &copy; 2023 {copyrightName}</p>
     </div>
 
   </Container>

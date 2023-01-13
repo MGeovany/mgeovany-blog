@@ -1,8 +1,19 @@
 export const footerSocials = [
 	{
+		name: 'LinkedIn',
+		url: 'https://www.linkedin.com/in/m-geovany/',
+		icon: 'mdi:linkedin',
+	},
+	{
 		name: 'Github',
 		url: 'https://github.com/mgeovany',
 		icon: 'mdi:github',
+	},
+
+	{
+		name: 'Instagram',
+		url: 'https://www.instagram.com/m_geovany_/',
+		icon: 'mdi:instagram',
 	},
 ];
 
