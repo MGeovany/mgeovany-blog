@@ -1,23 +1,14 @@
 ---
-const { href, imgSrc, title } = Astro.props;
+import { Icon } from 'astro-icon';
 
+const { href, key, title, desc, icon } = Astro.props;
 ---
 
-<div class="bg-blue-50 text-slate-900 rounded-xl bg-opacity-50">
-  <a class="block" href={href}>
-    <div class="pt-px-4 pb-0 flex flex-col align-middle text-center justify-center overflow-y-hidden">
-      <h3 class="font-sans">{title}</h3>
-      <picture class="w-auto h-1/3">
-        <source srcset={`${imgSrc}.webp`} type="image/webp" />
-        <img
-          class="hover:translate-y-0 my-0 mx-auto h-[200px] shadow-slate-500 translate-x-5 ease-in-out duration-150"
-          src={`${imgSrc}.png`}
-          alt={title}
-          loading="lazy"
-          decoding="async"
-        />
-      </picture>
-    </div>
-  </a>
+<div class=" text-slate-900 rounded-xl bg-opacity-50 h-60 px-16">
+	<a class="cursor-pointer" {href}>
+		<div class="flex flex-row">
+			<Icon name={icon} width="24px" height="24px" />
+			<h3 class="">{title}</h3>
+		</div>
+	</a>
 </div>
-

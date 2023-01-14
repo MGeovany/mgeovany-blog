@@ -5,9 +5,9 @@ import { Icon } from 'astro-icon';
 
 const { footerSocials, footerLists, copyrightName } = Astro.props;
 ---
-<footer class="min-w-max bg-neutral-800 text-slate-300 rounded-t-3xl">
+<footer class="bg-neutral-800 text-slate-300 rounded-t-3xl">
   <Container>
-    <div class="pt-5 px-0 pb-4 grid grid-cols-4">
+    <div class="pt-5 px-0 pb-4 grid md:grid-cols-4 sm:grid-cols-1">
       <div class="col-span-2">
         <div>
           <slot name="logo" />
@@ -23,7 +23,7 @@ const { footerSocials, footerLists, copyrightName } = Astro.props;
                   class=""
                   title={`Open ${social.name} profile`}
                 >
-                  <Icon name={social.icon} width="24px" height="24px" />
+                  <Icon class='opacity-40 hover:opacity-100 ease-in-out duration-300' name={social.icon} width="24px" height="24px" />
                 </a>
               </li>
             ))
@@ -33,11 +33,11 @@ const { footerSocials, footerLists, copyrightName } = Astro.props;
       {
         footerLists.map((list:any) => (
           <div>
-            <p><strong>{list.title}</strong></p>
+            <p class="opacity-40"><strong>{list.title}</strong></p>
             <ul class="m-0 p-0 list-none">
               {list.items.map((item:any) => (
                 <li class="mb-1">
-                  <a class="m-0 hover:opacity-80 text-sm"  href={item.slug}>{item.title}</a>
+                  <a class="m-0 opacity-40 hover:opacity-100 ease-in-out duration-300 text-sm" href={item.slug}>{item.title}</a>
                 </li>
               ))}
             </ul>
@@ -46,7 +46,7 @@ const { footerSocials, footerLists, copyrightName } = Astro.props;
       }
     </div>
     <div class="flex flex-col">
-      <p class="mr-0 text-sm">Copyright &copy; 2023 {copyrightName}</p>
+      <p class="mr-0 text-sm opacity-40">Copyright &copy; 2023 {copyrightName}</p>
     </div>
 
   </Container>

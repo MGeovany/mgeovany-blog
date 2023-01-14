@@ -4,31 +4,34 @@ import Container from '../components/common/Container.astro';
 import HomeHero from '../components/heros/HomeHero.astro';
 import Card from '../components/Card.astro';
 
-const coverImages = 
-	{
-		desk: 'https://images.pexels.com/photos/4057059/pexels-photo-4057059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-		computing: 'https://images.pexels.com/photos/13399388/pexels-photo-13399388.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-		videography: 'https://images.pexels.com/photos/2823936/pexels-photo-2823936.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-		gadgets: 'https://images.pexels.com/photos/3178938/pexels-photo-3178938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-		entertainment: 'https://images.pexels.com/photos/4842562/pexels-photo-4842562.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-	}
 
-
+const cards = await Astro.glob('../components/react/post/*.mdx').then(cards =>
+	cards.map(({ frontmatter, url }) => ({
+		title: frontmatter.title,
+		description: frontmatter.description,
+		authors: frontmatter.authors,
+		featuredImage: frontmatter.featuredImage,
+		excerpt: frontmatter.excerpt,
+		href: url,
+		icon: frontmatter.icon
+	}))
+);
 ---
 
 <Layout title="mgeovanydev | Welcome Page">
 	<HomeHero />
 	<Container>
-		<section class="py-12 px-auto">
-			<h2>Favorite Categories 🧡</h2>
-			<div class="grid grid-cols-2 gap-3">
-				<Card href="/categories/desk" title="Desk" imgSrc={coverImages.desk}/>
-				<Card href="/categories/computing" title="Computing" imgSrc={coverImages.computing}/>
-				<Card href="/categories/videography" title="Videography"imgSrc={coverImages.videography}/>
-				<Card href="/categories/gadgets" title="Gadgets" imgSrc={coverImages.gadgets}/>
-				<Card href="/categories/entertainment" title="Entertainment" imgSrc={coverImages.entertainment}/>
-				<Card href="/categories/entertainment" title="Another" imgSrc={coverImages.entertainment}/>
-			</div>
+		<section class="py-12 min-h-screen px-auto">
+			<p
+				class="text-orange-400 font-bold tracking-wide font-sans uppercase text-xs text-center"
+			>
+				features
+			</p>
+			<h2 class="text-center sfont-bold">Favorites Categories 🧡</h2>
+			<div class="grid md:grid-cols-3 sm:grid-cols-1 gap-10">
+		 {cards.map(card=> <Card title={card.title} href={card.href} icon={card.icon}/>)} 
+		 </div>
+
 		</section>
 	</Container>
 </Layout>

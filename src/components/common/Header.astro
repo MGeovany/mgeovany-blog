@@ -39,7 +39,7 @@ const { navData, rightMenu } = Astro.props;
   }
 </script>  
 
-<header id="navHeader" class={`${rightMenu ? "header--right" : ``.trim()} px-16`}>
+<header id="navHeader" class={`${rightMenu ? "header--right " : ``.trim()} px-16`}>
   <div class="header-logo-menu__container">
   <button id="menuButton" title="Open Main Menu">
     <span id="menuButtonIconHam">
@@ -132,6 +132,10 @@ const { navData, rightMenu } = Astro.props;
     #menuButton {
       display: block;  
       z-index: 100;
+    }
+
+    .header--right{
+      padding: 1rem 0.5rem !important;
     }
     .header-nav__container {
       width: 100%;
