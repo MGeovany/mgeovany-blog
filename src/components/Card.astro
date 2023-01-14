@@ -1,14 +1,19 @@
 ---
 import { Icon } from 'astro-icon';
 
-const { href, key, title, desc, icon } = Astro.props;
+const { href, title, desc, icon } = Astro.props;
 ---
 
-<div class=" text-slate-900 rounded-xl bg-opacity-50 h-60 px-16">
-	<a class="cursor-pointer" {href}>
-		<div class="flex flex-row">
-			<Icon name={icon} width="24px" height="24px" />
-			<h3 class="">{title}</h3>
-		</div>
-	</a>
+<div class="flex gap-4 items-start">
+	<Icon
+		name={icon}
+		color="white"
+		width="24px"
+		height="24px"
+		class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0"
+	/>
+	<div class="">
+		<h3 class="font-semibold text-lg font-sans">{title}</h3>
+		<p class="text-slate-500 mt-2 leading-relaxed">{desc}</p>
+	</div>
 </div>

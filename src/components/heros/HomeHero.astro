@@ -5,38 +5,35 @@ import { Icon } from 'astro-icon';
 ---
 
 <Container>
-  <section class="my-16 mx-auto min-h-max grid grid-cols-2 align-middle gap-2">
-  <div class="mr-0 flex flex-col align-middle justify-center justify-self-center max-w-[30rem]">
-      <h1>Welcome to the tech list I use</h1>
-      <p>
-        A simple website  made possible by the software and tools I use, which I have compiled below.
-      </p>
-      <div class="flex align-middle gap-1 mr-4">
-        <Button href="/blog" customIcon
-          >Get Started
-          <Fragment slot="icon">
-            <Icon name="ic:baseline-chevron-right"/>
-          </Fragment>
-          </Button
-        >
-      </div>
-  </div>
-  <div class="flex align-middle">
-      <picture>
-        <img
-        class="m-0 w-full h-full max-h-[80vh] object-cover rounded-2xl"
-          src="assets/images/home/3.png"
-          alt="three mgeovany"
-          id="home-hero-image"
-        />
-      </picture>
-  </div>
-</section>
+	<section
+		class="my-16 mx-auto min-h-max grid md:grid-cols-2 sm:grid-cols-1 align-middle gap-2"
+	>
+		<div
+			class="mr-0 flex flex-col align-middle justify-center justify-self-center max-w-[30rem]"
+		>
+			<h1>Welcome to the tech list I use</h1>
+			<p>
+				A simple website made possible by the software and tools I use, which I
+				have compiled below.
+			</p>
+			<div class="flex align-middle gap-1 mr-4">
+				<Button href="/blog" customIcon
+					>Get Started
+					<Fragment slot="icon">
+						<Icon name="ic:baseline-chevron-right" />
+					</Fragment>
+				</Button>
+			</div>
+		</div>
+		<div class="flex align-middle">
+			<picture>
+				<img
+					class="m-0 w-full h-full max-h-[80vh] object-cover rounded-2xl"
+					src="assets/images/home/3.png"
+					alt="three mgeovany"
+					id="home-hero-image"
+				/>
+			</picture>
+		</div>
+	</section>
 </Container>
-
-
-
-
-
-
-

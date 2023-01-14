@@ -3,19 +3,8 @@ import Layout from '../layouts/PageLayout.astro';
 import Container from '../components/common/Container.astro';
 import HomeHero from '../components/heros/HomeHero.astro';
 import Card from '../components/Card.astro';
+import { FEATURED_CARDS } from '../config/features';
 
-
-const cards = await Astro.glob('../components/react/post/*.mdx').then(cards =>
-	cards.map(({ frontmatter, url }) => ({
-		title: frontmatter.title,
-		description: frontmatter.description,
-		authors: frontmatter.authors,
-		featuredImage: frontmatter.featuredImage,
-		excerpt: frontmatter.excerpt,
-		href: url,
-		icon: frontmatter.icon
-	}))
-);
 ---
 
 <Layout title="mgeovanydev | Welcome Page">
@@ -28,8 +17,8 @@ const cards = await Astro.glob('../components/react/post/*.mdx').then(cards =>
 				features
 			</p>
 			<h2 class="text-center sfont-bold">Favorites Categories 🧡</h2>
-			<div class="grid md:grid-cols-3 sm:grid-cols-1 gap-10">
-		 {cards.map(card=> <Card title={card.title} href={card.href} icon={card.icon}/>)} 
+			<div class="grid md:grid-cols-3 sm:grid-cols-1 gap-10 py-10">
+		 {FEATURED_CARDS.map(card=> <Card title={card.title} href={card.href} icon={card.icon} desc={card.description}/>)} 
 		 </div>
 
 		</section>
