@@ -1,13 +1,14 @@
 ---
-const { href, unelevated, outlined, customIcon, onPrimary, newTab } =
+const { href, customIcon, target} =
 	Astro.props;
 
 const Tag = href ? 'a' : 'button';
 ---
 
 <Tag
-	class="w-fit py-2 px-3 mb-0 flex align-middle justify-center bg-slate-800 text-white border-none rounded-xl font-medium cursor-pointer outline-none"
+	class="w-fit py-2 px-3 mb-0 flex align-middle justify-center bg-slate-800 text-white border-none rounded-xl font-medium cursor-pointer outline-none text-md"
 	{href}
+  target={target}
 >
 	<slot />
 	{

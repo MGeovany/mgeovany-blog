@@ -11,16 +11,13 @@ import { FEATURED_CARDS } from '../config/features';
 	<HomeHero />
 	<Container>
 		<section class="py-12 min-h-screen px-auto">
-			<p
-				class="text-orange-400 font-bold tracking-wide font-sans uppercase text-xs text-center"
-			>
+			<p class="text-orange-400 font-bold tracking-wide font-sans uppercase text-xs text-center">
 				features
 			</p>
-			<h2 class="text-center sfont-bold">Favorites Categories 🧡</h2>
+			<h2 class="text-center">Favorites Categories 🧡</h2>
 			<div class="grid md:grid-cols-3 sm:grid-cols-1 gap-10 py-10">
 		 {FEATURED_CARDS.map(card=> <Card title={card.title} href={card.href} icon={card.icon} desc={card.description}/>)} 
 		 </div>
-
 		</section>
 	</Container>
 </Layout>
