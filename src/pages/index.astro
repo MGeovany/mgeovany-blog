@@ -5,17 +5,18 @@ import HomeHero from '../components/heros/HomeHero.astro';
 import Card from '../components/Card.astro';
 import { FEATURED_CARDS } from '../config/features';
 
+
 ---
 
 <Layout title="mgeovanydev | Welcome Page">
 	<HomeHero />
 	<Container>
-		<section class="py-12 min-h-screen px-auto">
+		<section class="py-12 min-h-screen px-auto flex flex-col justify-center items-center">
 			<p class="text-orange-400 font-bold tracking-wide font-sans uppercase text-xs text-center">
 				features
 			</p>
 			<h2 class="text-center">Favorites Categories 🧡</h2>
-			<div class="grid md:grid-cols-3 sm:grid-cols-1 gap-10 py-10">
+			<div class="grid md:grid-cols-3 sm:grid-cols-1 gap-10 py-10 w-10/12 justify-items-center">
 		 {FEATURED_CARDS.map(card=> <Card title={card.title} href={card.href} icon={card.icon} desc={card.description}/>)} 
 		 </div>
 		</section>

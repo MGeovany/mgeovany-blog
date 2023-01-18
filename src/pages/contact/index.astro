@@ -1,0 +1,69 @@
+---
+import { Icon } from 'astro-icon';
+import Button from '../../components/common/Button.astro';
+import Container from '../../components/common/Container.astro';
+import FormInput from '../../components/form-fields/FormInput.astro';
+import FormSelect from '../../components/form-fields/FormSelect.astro';
+import FormTextArea from '../../components/form-fields/FormTextArea.astro';
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const selectOptions = [
+	'Web Development',
+	'Website Design',
+	'SEO Optimization',
+	'Something Else',
+];
+---
+
+<PageLayout title="Contact | mgeovanydev">
+	<Container>
+		<div class="flex flex-col items-center justify-center">
+			<section class="md:w-3/6 sm:w-full">
+				<h1 class="font-sans leading-snug">
+					Love to hear from you, <br /> Get in touch 👋
+				</h1>
+				<div>
+					<form
+						name="Contact Form"
+						method="POST"
+						class="grid md:grid-cols-2 sm:grid-cols-1 md:gap-5 sm:gap-3 my-7"
+					>
+						<FormInput
+							type="text"
+							label="Name"
+							name="Name"
+							placeholder="John Doe"
+						/>
+						<FormInput
+							type="email"
+							label="Email"
+							name="Email"
+							placeholder="hello@example.com"
+						/>
+						<FormInput
+							type="text"
+							label="Phone"
+							name="Phone"
+							placeholder="+504 9483-6857"
+						/>
+						<FormSelect
+							label="What are you interested in?"
+							options={selectOptions}
+						/>
+						<FormTextArea
+							label="Message"
+							name="Message"
+							placeholder="Your message here..."
+						/>
+						<Button customIcon submit
+							>Send me a message
+							<Fragment slot="icon">
+								<Icon name="ph:arrow-elbow-right-bold" />
+							</Fragment>
+						</Button>
+					</form>
+				</div>
+			</section>
+		</div>
+	</Container>
+</PageLayout>
