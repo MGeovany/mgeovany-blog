@@ -1,0 +1,60 @@
+---
+import Categories from '../../components/Categories.astro';
+import Container from '../../components/common/Container.astro';
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const deskPosts = (await Astro.glob('./posts/desk/*.md')).sort(
+	(a: any, b: any) =>
+		new Date(b.frontmatter.createdAt).valueOf() -
+		new Date(a.frontmatter.createdAt).valueOf()
+);
+const computingPosts = (await Astro.glob('./posts/computing/*.md')).sort(
+	(a: any, b: any) =>
+		new Date(b.frontmatter.createdAt).valueOf() -
+		new Date(a.frontmatter.createdAt).valueOf()
+);
+const videographyPosts = (await Astro.glob('./posts/videography/*.md')).sort(
+	(a: any, b: any) =>
+		new Date(b.frontmatter.createdAt).valueOf() -
+		new Date(a.frontmatter.createdAt).valueOf()
+);
+const gadgetPosts = (await Astro.glob('./posts/gadgets/*.md')).sort(
+	(a: any, b: any) =>
+		new Date(b.frontmatter.createdAt).valueOf() -
+		new Date(a.frontmatter.createdAt).valueOf()
+);
+const entertainmentPosts = (
+	await Astro.glob('./posts/entertainment/*.md')
+).sort(
+	(a: any, b: any) =>
+		new Date(b.frontmatter.createdAt).valueOf() -
+		new Date(a.frontmatter.createdAt).valueOf()
+);
+---
+
+<PageLayout title="Blog | mgeovanydev">
+	<Container>
+		<div class="flex flex-col justify-center items-center justify-items-center">
+			<p class="mb-1 text-orange-400 font-bold">Blog</p>
+			<h1 class="font-sans mb-1">
+				Welcome to a curated list of the tech I use
+			</h1>
+			<p class="mt-1 mb-12 text-gray-600">
+				Here's my list of technologies I use in this space as software
+				developer.
+			</p>
+			<picture class="md:w-2/4 sm:w-full">
+				<img
+					class="m-0 w-full h-full max-h-[80vh] object-fit rounded-2xl"
+					src="assets/images/blog/moon.jpg"
+					alt="three mgeovany"
+				/>
+			</picture>
+			<Categories title={'Desk'} post={deskPosts} />
+			<Categories title={'Computing'} post={computingPosts} />
+			<Categories title={'Videography'} post={videographyPosts} />
+			<Categories title={'Gadgets'} post={gadgetPosts} />
+			<Categories title={'Entertainment'} post={entertainmentPosts} />
+		</div>
+	</Container>
+</PageLayout>

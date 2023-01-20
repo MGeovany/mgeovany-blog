@@ -1,0 +1,19 @@
+---
+const {title, post} = Astro.props
+---
+<div class="mt-20 w-3/4">
+  <p class="font-sans text-xl font-bold">{title}</p>
+  <ul class="grid sm:grid-cols-1 md:grid-cols-2 gap-7">
+    {post.map((post:any)=>
+      <li>
+        <a href={post.url} class="w-full">
+          <picture>
+            <img class="m-0 h-48 rounded-2xl object-cover w-full" src={post.frontmatter.heroImage} alt={post.frontmatter.title}/>
+          </picture>
+          <p class="mt-3 text-xl font-bold">{post.frontmatter.title}</p>
+          <p class="opacity-70">{post.frontmatter.desc}</p>
+        </a>
+      </li>
+        )}
+  </ul>
+</div>

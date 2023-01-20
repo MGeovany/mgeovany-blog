@@ -59,7 +59,7 @@ const { navData, rightMenu } = Astro.props;
       {navData && <nav>
         <ul>
           {navData.map((navItem:any) => (
-            (<li><a href={navItem.slug} >{navItem.title}</a></li>)
+            (<li><a class="mx-5 font-medium" href={navItem.slug} >{navItem.title}</a></li>)
           ))}
         </ul>
       </nav>}
