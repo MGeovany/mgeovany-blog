@@ -1,4 +1,6 @@
 ---
+import { Icon } from 'astro-icon';
+
 const {category} = Astro.props
 
 const posts = (await Astro.glob('../pages/blog/posts/*.md'))
@@ -11,8 +13,19 @@ const posts = (await Astro.glob('../pages/blog/posts/*.md'))
 ---
 
 
-<div class="mt-20 w-3/4">
-  <p class="font-sans text-xl font-bold">{category}</p>
+<div class="mt-20 md:w-3/4 w-full">
+  <a 
+    class="font-sans text-xl font-bold flex flex-row justify-between w-fit items-center my-5 cursor-pointer hover:italic"
+    href={`/categories/${category}`}
+  >
+  {category}
+   <Icon
+    width="54px"
+	  height="54px"
+    class="pt-1"
+    name='ic:outline-arrow-right-alt' 
+    />
+  </a>
   <ul class="grid sm:grid-cols-1 md:grid-cols-2 gap-7">
     {posts.map((post:any)=>
       <li>
