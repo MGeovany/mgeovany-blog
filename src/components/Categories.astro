@@ -15,8 +15,8 @@ const posts = (await Astro.glob('../pages/blog/posts/*.md'))
 
 <div class="mt-20 md:w-3/4 w-full">
   <a 
-    class="font-sans text-xl font-bold flex flex-row justify-between w-fit items-center my-5 cursor-pointer hover:italic"
-    href={`/categories/${category}`}
+    class="font-sans text-xl font-bold flex flex-row justify-between w-fit items-center my-5 cursor-pointer hover:italic capitalize"
+    href={`/category/${category}`}
   >
   {category}
    <Icon
@@ -33,7 +33,7 @@ const posts = (await Astro.glob('../pages/blog/posts/*.md'))
           <picture>
             <img class="m-0 h-48 rounded-2xl object-cover w-full" src={post.frontmatter.heroImage} alt={post.frontmatter.title}/>
           </picture>
-          <div class="mt-3 text-xl font-bold">{post.frontmatter.title}</div>
+          <div class="mt-3 mb-2 text-xl font-bold">{post.frontmatter.title}</div>
           <div class="opacity-70 text-gray-800">{post.frontmatter.desc}</div>
         </a>
       </li>

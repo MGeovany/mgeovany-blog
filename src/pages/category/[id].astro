@@ -1,0 +1,23 @@
+---
+import CategoryLayout from '../../layouts/CategoryLayout.astro';
+
+export async function getStaticPaths() {
+	const allPosts = await Astro.glob('../blog/posts/*.md');
+	const allTags = new Set<string>();
+	allPosts.map(post => {
+		post.frontmatter.tags &&
+			post.frontmatter.tags.map((tag: string) => allTags.add(tag));
+	});
+
+	return Array.from(allTags).map(tag => {
+		return {
+			params: { id: tag.toLowerCase() },
+			props: { name: tag },
+		};
+	});
+}
+
+const { name } = Astro.props;
+---
+
+<CategoryLayout category={name} />
