@@ -1,0 +1,49 @@
+---
+import Container from '../components/common/Container.astro';
+import { generateTagData } from '../utils/helpers';
+import PageLayout from './PageLayout.astro';
+
+const {
+	content: { title, desc, updatedAt, heroImage, verticalImage, slug, tags },
+} = Astro.props;
+
+let allTagsData = [];
+
+if (tags && tags.length > 0) {
+	allTagsData = generateTagData(tags);
+}
+---
+
+<PageLayout title={`Blog • ${tags} | mgeovanydev`}>
+	<Container>
+		<section class="flex flex-col items-center justify-center">
+			<div
+				class="grid md:grid-cols-2 sm:grid-cols-1 items-center md:w-5/6 sm:w-full my-4"
+			>
+				<div>
+					<div class="text-xs opacity-70 my-6 tracking-wide">
+						Last updated at {new Date(updatedAt).toDateString()}
+					</div>
+					<h1>{title}</h1>
+					<p class="font-bold tracking-wide uppercase text-slate-800">
+						{desc}
+					</p>
+				</div>
+				<div class="my-7">
+					<picture>
+						<img
+							class="object-cover rounded-2xl h-auto"
+							src={verticalImage}
+							alt={title}
+						/>
+					</picture>
+				</div>
+			</div>
+			<div
+				class=" md:w-3/6 leading-10 text-gray-500 first-letter:text-7xl first-letter:text-black"
+			>
+				<slot />
+			</div>
+		</section>
+	</Container>
+</PageLayout>
