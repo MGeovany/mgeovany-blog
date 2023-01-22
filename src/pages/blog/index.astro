@@ -2,34 +2,6 @@
 import Categories from '../../components/Categories.astro';
 import Container from '../../components/common/Container.astro';
 import PageLayout from '../../layouts/PageLayout.astro';
-
-const deskPosts = (await Astro.glob('./posts/desk/*.md')).sort(
-	(a: any, b: any) =>
-		new Date(b.frontmatter.createdAt).valueOf() -
-		new Date(a.frontmatter.createdAt).valueOf()
-);
-const computingPosts = (await Astro.glob('./posts/computing/*.md')).sort(
-	(a: any, b: any) =>
-		new Date(b.frontmatter.createdAt).valueOf() -
-		new Date(a.frontmatter.createdAt).valueOf()
-);
-const videographyPosts = (await Astro.glob('./posts/videography/*.md')).sort(
-	(a: any, b: any) =>
-		new Date(b.frontmatter.createdAt).valueOf() -
-		new Date(a.frontmatter.createdAt).valueOf()
-);
-const gadgetPosts = (await Astro.glob('./posts/gadgets/*.md')).sort(
-	(a: any, b: any) =>
-		new Date(b.frontmatter.createdAt).valueOf() -
-		new Date(a.frontmatter.createdAt).valueOf()
-);
-const entertainmentPosts = (
-	await Astro.glob('./posts/entertainment/*.md')
-).sort(
-	(a: any, b: any) =>
-		new Date(b.frontmatter.createdAt).valueOf() -
-		new Date(a.frontmatter.createdAt).valueOf()
-);
 ---
 
 <PageLayout title="Blog | mgeovanydev">
@@ -50,11 +22,11 @@ const entertainmentPosts = (
 					alt="three mgeovany"
 				/>
 			</picture>
-			<Categories title={'Desk'} post={deskPosts} />
-			<Categories title={'Computing'} post={computingPosts} />
-			<Categories title={'Videography'} post={videographyPosts} />
-			<Categories title={'Gadgets'} post={gadgetPosts} />
-			<Categories title={'Entertainment'} post={entertainmentPosts} />
+			<Categories category={'Desk'} />
+			<Categories category={'Computing'} />
+			<Categories category={'Videography'} />
+			<Categories category={'Gadgets'} />
+			<Categories category={'Entertainment'} />
 		</div>
 	</Container>
 </PageLayout>

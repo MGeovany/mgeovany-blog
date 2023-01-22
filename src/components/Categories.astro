@@ -1,10 +1,20 @@
 ---
-const {title, post} = Astro.props
+const {category} = Astro.props
+
+const posts = (await Astro.glob('../pages/blog/posts/*.md'))
+  .sort(
+    (a, b) =>
+      new Date(b.frontmatter.createdAt).valueOf() -
+      new Date(a.frontmatter.createdAt).valueOf()
+  )
+  .filter(item => item.frontmatter.tags.includes(category))
 ---
+
+
 <div class="mt-20 w-3/4">
-  <p class="font-sans text-xl font-bold">{title}</p>
+  <p class="font-sans text-xl font-bold">{category}</p>
   <ul class="grid sm:grid-cols-1 md:grid-cols-2 gap-7">
-    {post.map((post:any)=>
+    {posts.map((post:any)=>
       <li>
         <a href={post.url} class="w-full">
           <picture>
