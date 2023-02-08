@@ -5,7 +5,7 @@ title: Standard Tripod
 createdAt: 1675824912186
 updatedAt: 1675824912186
 heroImage: /assets/images/def.png
-verticalImage: /assets/images/about/build.jpeg
+verticalImage: /assets/images/about-img/build.jpeg
 slug: standard-tripod
 tags: ['videography']
 ---
