@@ -9,7 +9,7 @@ const posts = (await Astro.glob('../pages/blog/posts/*.md'))
       new Date(b.frontmatter.createdAt).valueOf() -
       new Date(a.frontmatter.createdAt).valueOf()
   )
-  .filter(item => item.frontmatter.tags.includes(category))
+  .filter(item => item?.frontmatter?.tags?.includes(category))
 ---
 
 
