@@ -10,11 +10,6 @@ import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
-import deno from "@astrojs/deno";
-
-// https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), react(), mdx()],
-  output: "server",
-  adapter: deno()
+	integrations: [tailwind(), react(), mdx()],
 });

@@ -16,7 +16,6 @@
 		"format": "npx prettier -w ."
 	},
 	"dependencies": {
-		"@astrojs/deno": "^4.0.0",
 		"@astrojs/mdx": "^0.16.0",
 		"@astrojs/react": "^2.0.2",
 		"@astrojs/tailwind": "^3.0.1",
