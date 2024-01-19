@@ -31,7 +31,7 @@ const posts = (await Astro.glob('../pages/blog/posts/*.md'))
       <li>
         <a href={post.url} class="w-full">
           <picture>
-            <img class="m-0 h-48 rounded-2xl object-cover w-full" src={post.frontmatter.heroImage} alt={post.frontmatter.title}/>
+            <img class="m-0 h-60 rounded-2xl object-cover w-full" src={post.frontmatter.heroImage} alt={post.frontmatter.title}/>
           </picture>
           <div class="mt-3 mb-2 text-xl font-bold">{post.frontmatter.title}</div>
           <div class="opacity-70 text-gray-800">{post.frontmatter.desc}</div>

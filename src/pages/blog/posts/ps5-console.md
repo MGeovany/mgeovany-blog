@@ -4,8 +4,8 @@ layout: ../../../layouts/BlogLayout.astro
 title: Play Station 5
 createdAt: 1675824912186
 updatedAt: 1675824912186
-heroImage: /assets/images/def.png
-verticalImage: /assets/images/about-img/build.jpeg
+heroImage: /assets/images/about-img/ps5V.jpeg
+verticalImage: /assets/images/about-img/ps5V.jpeg
 slug: play-station-5
 tags: ['entertainment']
 ---

@@ -4,8 +4,8 @@ layout: ../../../layouts/BlogLayout.astro
 title: Apple Magic Mouse
 createdAt: 1675824912186
 updatedAt: 1675824912186
-heroImage: /assets/images/def.png
-verticalImage: /assets/images/about-img/build.jpeg
+heroImage: /assets/images/about-img/mouseH.jpeg
+verticalImage: /assets/images/about-img/mouseV.jpeg
 slug: apple-magic-mouse
 tags: ['desk']
 ---

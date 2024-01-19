@@ -4,8 +4,8 @@ layout: ../../../layouts/BlogLayout.astro
 title: Onyx, my cat 🐈‍⬛
 createdAt: 1675824912186
 updatedAt: 1675824912186
-heroImage: /assets/images/def.png
-verticalImage: /assets/images/about-img/build.jpeg
+heroImage: /assets/images/about-img/catH.jpeg
+verticalImage: /assets/images/about-img/catV.jpeg
 slug: onyx-cat
 tags: ['gadgets']
 ---
