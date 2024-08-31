@@ -4,6 +4,9 @@ A simple website made possible by the software and tools I use, which I have com
 
 ### Preview:
 <img src="/public/assets/images/blog.webp" alt="preview"/>
-### Demo:
+
+<h3>
+  Demo
+</h3>
 
 https://mgeovany-blog.vercel.app/
